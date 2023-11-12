@@ -21,26 +21,19 @@ jobs:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      # build you static site here if needed
-      # - id: 'build'
-      #   name: 'Build'
-      #   run: |
-      #     hugo --gc --minify
-
-
       # configure gcloud `setup-gcloud` automatically
       - id: 'auth'
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v1'
         with:
-          workload_identity_provider: 'projects/143616246873/locations/global/workloadIdentityPools/<YOUR POOL HERE>/providers/<YOUR PROVIDER HERE>'
-          service_account: 'github-actions-service-account@<YOUR PROJECT ID>.iam.gserviceaccount.com' # UPDATE THIS TO YOUR SERVICE ACCOUNT
+          workload_identity_provider: 'projects/806287647216/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+          service_account: 'github-actions-service-account@cs-1660-final.iam.gserviceaccount.com' # UPDATE THIS TO YOUR SERVICE ACCOUNT
 
       # upload files to GCS
       - id: 'upload-static-files'
         uses: 'google-github-actions/upload-cloud-storage@v1'
         with:
-          path: 'public' # UPDATE THIS TO YOUR BUILD/FILES DIRECTORY
-          destination: 'storage-bucket-name' # UPDATE THIS TO YOUR BUCKET NAME
+          path: './' # UPDATE THIS TO YOUR BUILD/FILES DIRECTORY
+          destination: 'sjarmell-160-project' # UPDATE THIS TO YOUR BUCKET NAME
           parent: false
 

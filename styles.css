@@ -1,0 +1,452 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+/* Global CSS */
+* {
+    box-sizing: border-box;
+
+    font-family: "Open Sans", sans-serif;
+
+    scroll-behavior: smooth;
+
+    --main-bg-color: #ffffff;
+    --secondary-bg-color: rgba(255, 182, 18, 0.4);
+    --main-text-color: #000000;
+
+    --pitt-blue: #003594;
+    --pitt-yellow: #ffb81c;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* Navigation Bar */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.75rem;
+}
+
+.nav-container a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.nav-container__links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-container__links > li {
+    list-style-type: none;
+}
+
+.nav-contact-link,
+.portfolio__project-header,
+.nav-container__link {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+        linear-gradient(to right, #101820, #ffb612);
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+
+.nav-contact-link:hover,
+.portfolio__project-header:hover,
+.nav-container__link:hover {
+    background-size: 0 3px, 100% 3px;
+}
+
+/* Section Shared CSS */
+
+.section-container {
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem;
+}
+
+.section-container:nth-of-type(even) {
+    background-color: var(--secondary-bg-color);
+}
+
+.section__title {
+    font-size: 2.5rem;
+    font-weight: 550;
+}
+
+.section__subtitle {
+    font-size: 1.75rem;
+    font-weight: 200;
+}
+
+.experience-container,
+.about-container,
+.portfolio-container,
+.contact-container {
+    max-width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Home */
+
+.home-section-container {
+    flex-direction: row;
+    margin-top: 3.5rem;
+}
+
+.home__container {
+    display: flex;
+    gap: 10rem;
+}
+
+.home__icon {
+    max-height: 1.5rem;
+    max-width: 1.5rem;
+}
+
+.home__name-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+.home__name {
+    font-size: 3.75rem;
+    font-weight: bold;
+}
+
+.home__mission-statement {
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+
+.home__contact-container {
+    display: flex;
+    margin-top: 2.5rem;
+    gap: 3rem;
+}
+
+.home__contact-resource {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.home__contact-resource > span {
+    font-size: 1.25rem;
+}
+
+.home__kp-picture {
+    max-height: 22.5rem;
+    width: auto;
+    border-radius: 40px;
+}
+
+.home__kp-picture-phone {
+    display: none;
+}
+
+/* About */
+
+.about__text {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-weight: 100;
+}
+
+.about__text-pitt {
+    background: linear-gradient(to right, var(--pitt-blue), var(--pitt-yellow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.about__text-bold {
+    font-weight: bold;
+}
+
+/* Experience */
+.experience-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.experience__skills-container {
+    flex: 0.3;
+}
+
+.experience__experience-container {
+    flex: 0.7;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.experience__job-title {
+    font-size: 1.4rem;
+}
+
+.experience__job-description {
+    font-size: 1rem;
+    line-height: 1.75rem;
+}
+
+.experience__job-company {
+    font-style: italic;
+}
+
+.experience__skills-section-subtitle {
+    font-size: 1.4rem;
+}
+
+.experience__skills-items-container > li {
+    font-size: 1.2rem;
+}
+
+
+/* Portfolio */
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.portfolio__project-title {
+    font-size: 1.4rem;
+}
+
+.portfolio__project-description {
+    font-size: 1rem;
+    line-height: 1.75rem;
+}
+
+.external-link-icon {
+    height: 1.5rem;
+}
+
+.portfolio__project-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: black;
+    width: fit-content;
+}
+
+
+/* Contact */
+.contact__items-container > li {
+    list-style-type: none;
+}
+
+.contact__item-logo {
+    height: 2.5rem;
+    border-radius: 4px;
+}
+
+.contact__items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-section__title {
+    text-align: center;
+}
+
+.contact__item-name {
+    font-size: 1.2rem;
+}
+
+.contact__item-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: black;
+}
+
+/* Footer */
+.footer-container {
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+
+
+/* Media Queries for Tablets */
+@media (max-width: 960px) {
+    body,
+    html {
+        height: 100dvh;
+        width: 100dvw;
+    }
+
+    .experience-container,
+    .about-container,
+    .portfolio-container,
+    .nav-container,
+    .contact-container {
+        max-width: 100dvw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .nav-container {
+        padding: 0.75rem 5rem;
+    }
+
+    .experience__skills-items-container > li {
+        font-size: 1.2rem;
+    }
+
+    .experience-container {
+        gap: 3rem;
+    }
+
+    .home__container {
+        gap: 0px;
+        justify-content: space-evenly;
+    }
+
+    .home-section-container {
+        margin-top: 0px;
+        padding: 3rem;
+    }
+
+    .home__kp-picture {
+        max-height: 20rem;
+        margin-left: 2rem;
+    }
+
+    .home__name {
+        font-size: 3rem;
+    }
+
+    .home__mission-statement {
+        font-size: .8rem;
+    }
+}
+
+/* Media Queries for Phones */
+@media (max-width: 480px) {
+    .nav-container__link {
+        display: none;
+    }
+
+    .home__kp-picture {
+        display: none;
+    }
+
+    .home__kp-picture-phone {
+        display: inline;
+        height: 16rem;
+        width: 16rem;
+        margin-top: 1rem;
+        border-radius: 30px;
+    }
+
+    .experience-container {
+        flex-direction: column;
+    }
+
+    .nav-container {
+        justify-content: space-evenly;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .section-container {
+        padding: 2.25rem 2rem;
+    }
+
+    .home-section-container {
+        margin-top: 0rem;
+        padding-top: 0rem;
+    }
+
+    .home__name-container {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home__name {
+        font-size: 2.5rem;
+    }
+
+    .home__mission-statement {
+        font-size: .75rem;
+    }
+
+    .home__contact-container {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home__contact-resource-number {
+        text-decoration: none;
+        color: black;
+    }
+
+    .section__title {
+        font-size: 1.75rem;
+    }
+
+    .about__text {
+        font-size: 1rem;
+    }
+
+    .section__skills-container {
+        margin-top: 1rem;
+        display: flex;
+    }
+
+    .experience__skills-section-subtitle {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .experience__skills-items-container > li {
+        font-size: 1rem;
+    }
+
+    .section__skills-technical-container,
+    .section__skills-soft-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .experience__job-title {
+        font-size: 1.25rem;
+    }
+
+    .portfolio__project-title {
+        font-size: 1.25rem;
+    }
+}
