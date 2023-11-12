@@ -34,6 +34,6 @@ jobs:
         uses: 'google-github-actions/upload-cloud-storage@v1'
         with:
           path: './' # UPDATE THIS TO YOUR BUILD/FILES DIRECTORY
-          destination: 'sjarmell-160-project' # UPDATE THIS TO YOUR BUCKET NAME
+          destination: 'sjarmell-1660-project' # UPDATE THIS TO YOUR BUCKET NAME
           parent: false
 
